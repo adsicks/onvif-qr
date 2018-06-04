@@ -19,10 +19,10 @@ $uuid=writeRecord($record_out);
 //echo "Record to write: ".$record_out."\n";
 $result = $qr->encryptKey('');
 //echo "Encrypt Key: ".bin2hex($result['data'])."\ntag: ".bin2hex($result['tag'])."\n";
-echo "https://auth.zwebusa.com/qr.php?id=".dec2padhex(strlen(bin2hex($result['tag'])),2).bin2hex($result['tag']). bin2hex($result['data'])."\n";
+//echo "https://auth.zwebusa.com/qr.php?id=".dec2padhex(strlen(bin2hex($result['tag'])),2).bin2hex($result['tag']). bin2hex($result['data'])."\n";
 $url=urlencode("https://auth.zwebusa.com/qr-decode.php?id=".dec2padhex(strlen(bin2hex($result['tag'])),2).bin2hex($result['tag']).bin2hex($result['data'])."&file=".$uuid);
 echo "Link: https://auth.zwebusa.com/qr-decode.php?id=".dec2padhex(strlen(bin2hex($result['tag'])),2).bin2hex($result['tag']).bin2hex($result['data'])."&file=".$uuid."<br/>\n";
-echo $url."\n";
+//echo $url."\n";
 echo "<img src=\"http://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=$url\" />";
 // writes the record file, returns the uuid extension
 function writeRecord($rec){

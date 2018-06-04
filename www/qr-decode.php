@@ -1,7 +1,7 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 'on');
+//error_reporting(E_ALL);
+//ini_set('display_errors', 'on');
 require 'lib/class.ponvif.php';
 require 'lib/class.qr.php';
 
@@ -14,9 +14,9 @@ $auth=htmlspecialchars($_GET["id"]);
 $ext=htmlspecialchars($_GET["file"]);
 //echo  "Auth Code: ".$auth."\n";
 $dec=$qr->decodeKey($auth);
-echo "Tag: ".$dec['tag']."\n";
-echo "Key: ".$dec['data']."\n";
-echo "tag ".hex2bin($dec['tag'])." data ".hex2bin($dec['data'])."\n";
+//echo "Tag: ".$dec['tag']."\n";
+//echo "Key: ".$dec['data']."\n";
+//echo "tag ".hex2bin($dec['tag'])." data ".hex2bin($dec['data'])."\n";
 $decrypt=$qr->decryptKey($dec);
 //echo "Decrypted Key: ".bin2hex($decrypt)."\n";
 
@@ -39,7 +39,7 @@ $decrypt=$qr->decryptKey($dec);
 
 $dec_rec=$qr->decryptRecord(substr($rec,4), $decrypt);
 $data=$qr->decodeRecord($dec_rec);
-var_dump($data);
+//var_dump($data);
 
 if($data['ip']=='') die("Error!!!");
 echo "<h1>Select a stream from ".$data['desc']." to view link</h1>\n";
