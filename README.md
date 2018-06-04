@@ -1,14 +1,14 @@
 # onvif-qr
 
-These are scripts to incorporate into plug-ins to get ONVIF streams easily. It realies heavily on the ponvif library that has been modified to work with Profile T cameras.
+These are scripts to incorporate into plug-ins to get ONVIF streams easily. It relies heavily on the ponvif library that has been modified to work with Profile T cameras.
 
 camera-entry.php
 
-This script contains an example form to get the authenication information for an ip cctv piece of onvif compliant equipment for downloading. In it's current form it assumes the user is autheniacted over https with digest authentaction. If the user is 'admin' then you can choose to create a file that a user with the name entered in the 'client username' field can later use to get streams from the device. The information is posted to qr-encode.php.
+This script contains an example form to get the authentication information for an ip cctv piece of onvif compliant equipment for downloading. In it's current form it assumes the user is authenticated over https with digest authentication. If the user is 'admin' then you can choose to create a file that a user with the name entered in the 'client username' field can later use to get streams from the device. The information is posted to qr-encode.php.
 
 qr-encode.php
 
-This file encodes the data as a flat file or a reocrd in a database for later retrieval by the user. A link to qr-decode.php with the proper tokens is encoded in a QR Code for easy addition to mobile clients such as cell phones or tablets. It is assumed qr-decode is on a server with the same authentication scheme and user name as qr-encode.
+This file encodes the data as a flat file or a record in a database for later retrieval by the user. A link to qr-decode.php with the proper tokens is encoded in a QR Code for easy addition to mobile clients such as cell phones or tablets. It is assumed qr-decode is on a server with the same authentication scheme and user name as qr-encode.
 
 qr-decode.php
 
